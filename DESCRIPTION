@@ -2,7 +2,7 @@ Package: dragracer
 Type: Package
 Title: dragracer: data sets for RuPaul's Drag Race
 Version: 0.1.0
-Author: Who wrote it
+Author: Steven V. Miller
 Maintainer: Steven V. Miller <steven.v.miller@gmail.com>
 Description: This is a work in progress.
 License: GPL-2 | GPL-3
