@@ -1,5 +1,5 @@
-\name{rdr_ep}
-\alias{rdr_ep}
+\name{rpdr_ep}
+\alias{rpdr_ep}
 \docType{data}
 \title{
 RuPaul's Drag Race Episode Data, Season 1-10
@@ -7,7 +7,7 @@ RuPaul's Drag Race Episode Data, Season 1-10
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
-\usage{data("rdr_ep")}
+\usage{data("rpdr_ep")}
 \format{
   A data frame with 131 observations on the following 20 variables.
   \describe{
@@ -43,7 +43,6 @@ RuPaul's Drag Race Episode Data, Season 1-10
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
-data(rdr_ep)
-## maybe str(rdr_ep) ; plot(rdr_ep) ...
+data(rpdr_ep)
 }
 \keyword{datasets}

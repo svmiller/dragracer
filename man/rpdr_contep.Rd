@@ -1,5 +1,5 @@
-\name{rdr_contep}
-\alias{rdr_contep}
+\name{rpdr_contep}
+\alias{rpdr_contep}
 \docType{data}
 \title{
 RuPaul's Drag Race Episode-Contestant Data, Season 1-10
@@ -7,7 +7,7 @@ RuPaul's Drag Race Episode-Contestant Data, Season 1-10
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
-\usage{data("rdr_contep")}
+\usage{data("rpdr_contep")}
 \format{
   A data frame with 1496 observations on the following 10 variables.
   \describe{
@@ -33,7 +33,6 @@ RuPaul's Drag Race Episode-Contestant Data, Season 1-10
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
-data(rdr_contep)
-## maybe str(rdr_contep) ; plot(rdr_contep) ...
+data(rpdr_contep)
 }
 \keyword{datasets}
