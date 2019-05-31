@@ -2,14 +2,14 @@
 \alias{rpdr_ep}
 \docType{data}
 \title{
-RuPaul's Drag Race Episode Data, Season 1-10
+RuPaul's Drag Race Episode Data, Season 1-11
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("rpdr_ep")}
 \format{
-  A data frame with 131 observations on the following 20 variables.
+  A data frame with 145 observations on the following 20 variables.
   \describe{
     \item{\code{season}}{a character vector for season}
     \item{\code{episode}}{a numeric vector for the episode number}
@@ -25,7 +25,10 @@ RuPaul's Drag Race Episode Data, Season 1-10
     \item{\code{minicw3}}{a character vector for a second mini-challenge winner, where applicable}
     \item{\code{bottom1}}{a character vector for queen in the bottom 2 of that episode}
     \item{\code{bottom2}}{a character vector for queen in the bottom 2 of that episode}
-    \item{\code{bottom3}}{a logical vector, empty for now, for future episodes in which there may be three bottoms. Thinking of All-Stars here as well.}
+    \item{\code{bottom3}}{a character vector for the third queen in the bottom of that episode. Thanks, Season 11.}
+    \item{\code{bottom4}}{a character vector for the fourth queen in the bottom of that episode. Thanks, Season 11.}
+    \item{\code{bottom5}}{a character vector for the fifth queen in the bottom of that episode. Thanks, Season 11.}
+    \item{\code{bottom6}}{a character vector for the sixth queen in the bottom of that episode. Thanks, Season 11.}
     \item{\code{lipsyncartist}}{a character vector for the lip-sync artist}
     \item{\code{lipsyncsong}}{a character vector for the lip-sync artist's song}
     \item{\code{eliminated1}}{a character vector for the queen eliminated after the lip-sync}
