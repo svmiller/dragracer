@@ -2,14 +2,14 @@
 \alias{rpdr_ep}
 \docType{data}
 \title{
-RuPaul's Drag Race Episode Data, Season 1-11
+RuPaul's Drag Race Episode Data, Season 1-12
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("rpdr_ep")}
 \format{
-  A data frame with 145 observations on the following 20 variables.
+  A data frame with 159 observations on the following 23 variables.
   \describe{
     \item{\code{season}}{a character vector for season}
     \item{\code{episode}}{a numeric vector for the episode number}

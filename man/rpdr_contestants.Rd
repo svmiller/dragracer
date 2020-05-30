@@ -2,14 +2,14 @@
 \alias{rpdr_contestants}
 \docType{data}
 \title{
-RuPaul's Drag Race Contestant Data, Season 1-11
+RuPaul's Drag Race Contestant Data, Season 1-12
 }
 \description{
 Note: Cynthia Lee Fontaine, Shangela, Eureka O'Hara, and Vanessa Vanjie Mateo will appear in this data set twice.
 }
 \usage{data("rpdr_contestants")}
 \format{
-  A data frame with 144 observations on the following 20 variables.
+  A data frame with 157 observations on the following 23 variables.
   \describe{
     \item{\code{season}}{a character vector for season}
     \item{\code{contestant}}{a character vector for contestant's name, by season}
@@ -33,7 +33,7 @@ Note: Cynthia Lee Fontaine, Shangela, Eureka O'Hara, and Vanessa Vanjie Mateo wi
     \item{\code{num_lowbtm}}{a numeric vector for number of contests in which the contestant scored low or was in the bottom}
     \item{\code{db_score}}{Dusted or Busted score.}
     \item{\code{points}}{The total number of points for a contestant in a season}
-    \item{\code{db_score}}{points/numcontests}
+    \item{\code{ppe}}{points/numcontests}
   }
 }
 \details{

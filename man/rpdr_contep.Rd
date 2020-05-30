@@ -2,18 +2,19 @@
 \alias{rpdr_contep}
 \docType{data}
 \title{
-RuPaul's Drag Race Episode-Contestant Data, Season 1-11
+RuPaul's Drag Race Episode-Contestant Data, Season 1-12
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("rpdr_contep")}
 \format{
-  A data frame with 1706 observations on the following 10 variables.
+  A data frame with 1888 observations on the following 11 variables.
   \describe{
     \item{\code{season}}{a character vector for the season}
     \item{\code{rank}}{a numeric vector for the final rank of the contestant}
     \item{\code{contestant}}{a character vector for the contestant's name}
+    \item{\code{missc}}{a dummy variable indicating if the contestant was Miss Congeniality}
     \item{\code{episode}}{a numeric vector for the episode number}
     \item{\code{outcome}}{a character vector for the outcome for the queen after the main challenge}
     \item{\code{eliminated}}{a character vector (0,1) for if the queen was eliminated/removed from the competition after the episode}
