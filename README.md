@@ -27,7 +27,7 @@ devtools::install_github("svmiller/dragracer")
 ## Usage
 
 The data right now contain three data sets. `rpdr_ep` is episode-level
-data for all available seasons. These include observations about twhen
+data for all available seasons. These include observations about when
 the episode aired, the number of queens in the episode, mini-challenge
 winners, who appeared in the bottom for a given episode, and who was
 sent home. `rpdr_contestants` is a data frame of contestant-level
