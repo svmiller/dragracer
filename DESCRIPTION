@@ -1,10 +1,16 @@
 Package: dragracer
 Type: Package
-Title: dragracer: data sets for RuPaul's Drag Race, Seasons 1-12
-Version: 0.1.3
+Title: dragracer: Data Ssets for RuPaul's Drag Race
+Version: 0.1.4
 Author: Steven V. Miller
 Maintainer: Steven V. Miller <steven.v.miller@gmail.com>
-Description: This is a work in progress. This may not be the most productive use of my time, but I have tenure and what are you going to do about it?
-License: GPL-2 | GPL-3
+Description: This is an R package for data sets pertaining to RuPaul's Drag Race. 
+    Data right now include episode-level data, contestant-level data, and 
+    episode-contestant-level data. This is a work in progress, and a love letter
+    of a kind to RuPaul's Drag Race and the performers that have appeared on the show.
+    This may not be the most productive use of my time, but I have tenure and what 
+    are you going to do about it?
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1

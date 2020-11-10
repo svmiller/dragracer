@@ -1,0 +1,62 @@
+---
+output: github_document
+---
+
+# dragracer: Data Sets for RuPaul's Drag Race
+
+<img src="man/figures/dragracer-sticker.png" alt="The dragracer hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/>
+
+`dragracer` is an R package of data sets for all available seasons of RuPaul's Drag Race, excluding All Stars. It's updated at the end of each season. I have [a blog post that describes these data](http://svmiller.com/blog/2019/02/dragracer-rupauls-drag-race-analysis/) in some detail, which showcases some of the things you can do with it. I offer this R package as a love letter of a kind to RuPaul's Drag Race and all the contestants that have appeared on it. We have no choice but to stan, especially Jinkx Monsoon. Sasha Velour is Champaign-Urbana's greatest export since REO Speedwagon. Kameron Michaels should've won Season 10.
+
+## Installation
+
+The goal is to get this on CRAN, eventually. Until then, you can install the development version of `dragracer` from Github via the `devtools` package. I suppose using the `remotes` package would work as well.
+
+```r
+devtools::install_github("svmiller/dragracer")
+```
+
+## Usage
+
+The data right now contain three data sets. `rpdr_ep` is episode-level data for all available seasons. These include observations about twhen the episode aired, the number of queens in the episode, mini-challenge winners, who appeared in the bottom for a given episode, and who was sent home. `rpdr_contestants` is a data frame of contestant-level information, including the contestant's age, purported date of birth, hometown, and how they fared across all episodes in their particular season. `rpdr_contep` is episode-contestant-level data about how each contestant fared in a particular episode in which they were. You can read more through this command.
+
+```r
+data(package = "dragracer")
+```
+
+The ensuing output will look like this.
+
+```{r, echo=F, eval=T}
+alldata <- data(package = "dragracer")
+library(knitr)
+library(tibble)
+
+tibble(`**Object Name**` = alldata$results[, "Item"],
+       `**Title/Description**` = alldata$results[, "Title"]) %>%
+  kable(., format="markdown")
+```
+
+Here is a simple scraping job to provide more information (by way of the `description` field in the associated R Documentation file).
+
+```{r, echo=F, eval=T}
+getdescript <- function(package){
+  db <- tools::Rd_db(package)
+  descript <- lapply(db,function(x) {
+    tags <- tools:::RdTags(x)
+    if("\\description" %in% tags){
+      out <- paste(unlist(x[which(tags=="\\description")]),collapse="")
+    }
+    else
+      out <- NULL
+    invisible(out)
+  })
+  gsub("\n","",unlist(descript))
+}
+
+descripts <- getdescript("dragracer")
+
+tibble(`**Object Name**` = alldata$results[, "Item"],
+       `**Description**` = descripts)  %>%
+  kable(., format="markdown")
+
+```
