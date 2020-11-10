@@ -10,9 +10,9 @@ data](http://svmiller.com/blog/2019/02/dragracer-rupauls-drag-race-analysis/)
 in some detail, which showcases some of the things you can do with it. I
 offer this R package as a love letter of a kind to RuPaul’s Drag Race
 and all the contestants that have appeared on it. We have no choice but
-to stan, especially Jinkx Monsoon. Sasha Velour is Champaign-Urbana’s
-greatest export since REO Speedwagon. Kameron Michaels should’ve won
-Season 10.
+to stan, especially Jinkx Monsoon. Jinkx is the GOAT. Sasha Velour is
+Champaign-Urbana’s greatest export since REO Speedwagon. Kameron
+Michaels should’ve won Season 10.
 
 ## Installation
 
