@@ -1,0 +1,140 @@
+---
+title: "An Introduction to the `dragracer` Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Introduction to the `dragracer` Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(dragracer)
+library(tibble)
+library(dplyr)
+library(tidyr)
+```
+
+The `dragracer` package has three data sets. The first is episode-level data (`rpdr_ep`). These data contain some more granular information about each episode that may not be discernible from how episodes are typically summarized on Wikipedia (e.g. mini-challenge winners, runway themes [where applicable], lip-sync song and artist). The second data set is contestant-level (`rpdr_contestants`). This data frame includes the contestant name, hometown, and purported date of birth and age by the start of the show. The third data set is episode-contestant-level data (`rpdr_contep`). This is the most familiar form of the data that a reader of the show's Wikipedia entries could discern. They include information about how a contestant fared in a particular episode (i.e. whether they won, scored high, were safe, scored low, or were in the bottom). The show's fans are accustomed to seeing this form of the data as akin to a pyramid. However, I convert the data from wide to long, making the data akin to a survival data-generating process.
+
+
+Here are some potential uses of the data.
+
+# Summarizing the Data
+
+A user can learn about how to summarize data. Here, we can get the average age of the contestants by season from the `rpdr_contestants` data.
+
+
+```{r}
+rpdr_contestants %>%
+  group_by(season) %>%
+  summarize(mean_age = mean(age))
+```
+
+A user can also see which musical artists have appeared most for lip-syncs. The answer here is, unsurprisingly, RuPaul.
+
+```{r}
+rpdr_ep %>%
+  group_by(lipsyncartist) %>%
+  summarize(n = n()) %>% 
+  na.omit %>%
+  arrange(-n) %>% head(10)
+```
+
+A user can also see how Jinkx Monsoon, the GOAT, fared in all her episodes.
+
+```{r}
+rpdr_contep %>%
+  filter(contestant == "Jinkx Monsoon") %>%
+  select(season, contestant, episode, outcome, finale)
+```
+
+# Merging Across Data
+
+Previous versions of the data included all sorts of information at the contestant-level. For release, I decided to strip that information from the data in order to allow the user to learn how to do this. For example, if you were interested in summarizing how each contestant did in their particular season on various metrics, here's how you might do that.
+
+First, let's merge in the mini-challenge data. Mini-challenges are irregular; not every episode has them. Indeed, Season 12 had very few of them. So, they get special treatment in the episode-level data.
+
+```{r}
+
+rpdr_ep %>%
+  select(season, minicw1:minicw3) %>%
+  group_by(season) %>%
+  gather(Category, contestant, minicw1:minicw3) %>%
+  na.omit %>%
+  group_by(season, contestant) %>%
+  summarize(minicwins = n()) %>%
+  left_join(rpdr_contestants, .) %>%
+  mutate(minicwins = ifelse(is.na(minicwins), 0, minicwins)) -> D
+
+```
+
+
+Now, let's merge in data from the episode-contestant-level about how each contestant fared, excluding finales and specials. We'll calculate all sorts of things here, including estimated "points per episode" and "Dusted or Busted" scores.
+
+
+```{r}
+rpdr_contep %>%
+  filter(participant == 1 & finale == 0 & penultimate == 0) %>%
+  mutate(high = ifelse(outcome == "HIGH", 1, 0),
+         win = ifelse(outcome == "WIN", 1, 0),
+         low = ifelse(outcome == "LOW", 1, 0),
+         safe = ifelse(outcome == "SAFE", 1, 0),
+         highsafe = ifelse(outcome %in% c("HIGH", "SAFE"), 1, 0),
+         winhigh = ifelse(outcome %in% c("HIGH", "WIN"), 1, 0),
+         btm = ifelse(outcome == "BTM", 1, 0),
+         lowbtm = ifelse(outcome %in% c("BTM", "LOW"), 1, 0)) %>%
+  group_by(season,contestant,rank) %>%
+  mutate(numcontests = n()) %>%
+  group_by(season,contestant, numcontests, rank) %>%
+  summarize(perc_high = sum(high)/unique(numcontests),
+            perc_win = sum(win)/unique(numcontests),
+            perc_winhigh = sum(winhigh)/unique(numcontests),
+            perc_low = sum(low)/unique(numcontests),
+            perc_btm = sum(btm)/unique(numcontests),
+            perc_lowbtm = sum(lowbtm)/unique(numcontests),
+            num_high = sum(high),
+            num_win = sum(win),
+            num_winhigh = sum(winhigh),
+            num_btm = sum(btm),
+            num_low = sum(low),
+            num_lowbtm = sum(lowbtm),
+            db_score = 2*sum(win, na.rm=T) +
+              1*sum(high, na.rm=T) +
+              (sum(safe, na.rm=T)*0) +
+              (sum(low, na.rm=T)*-1) + (sum(btm, na.rm=T)*-2)) %>%
+  ungroup() %>%
+  mutate(points = (2*num_win + num_high - num_low + (-2)*num_btm),
+            ppe = points/numcontests) %>%
+  full_join(D, .) -> D
+
+```
+
+
+How, let's look at who had the highest "Dusted or Busted" score across all seasons.
+
+```{r}
+D %>%
+  arrange(-db_score) %>%
+  head(10) %>%
+  select(season, contestant, rank, db_score)
+```
+
+
+Let's also see who has the highest "points per episode" score.
+
+
+```{r}
+D %>%
+  arrange(-ppe) %>%
+  head(10) %>%
+  select(season, contestant, rank, ppe)
+```
+
+Feel free to use the data for your own ends or learn R from it.

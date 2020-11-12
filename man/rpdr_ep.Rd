@@ -5,7 +5,7 @@
 \alias{rpdr_ep}
 \title{RuPaul's Drag Race Episode Data}
 \format{
-A data frame with 159 observations on the following 23 variables.
+A data frame with 159 observations on the following 22 variables.
 \describe{
     \item{\code{season}}{a character vector for season}
     \item{\code{episode}}{a numeric vector for the episode number}
@@ -29,7 +29,6 @@ A data frame with 159 observations on the following 23 variables.
     \item{\code{lipsyncsong}}{a character vector for the lip-sync artist's song}
     \item{\code{eliminated1}}{a character vector for the queen eliminated after the lip-sync}
     \item{\code{eliminated2}}{a character vector for the queen eliminated after the lip-sync, if there was a double-sashay that episode.}
-    \item{\code{notes}}{a character vector of notes to myself}
 }
 }
 \usage{
