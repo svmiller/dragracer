@@ -1,6 +1,6 @@
 Package: dragracer
 Type: Package
-Title: dragracer: Data Ssets for RuPaul's Drag Race
+Title: dragracer: Data Sets for RuPaul's Drag Race
 Version: 0.1.4
 Author: Steven V. Miller
 Maintainer: Steven V. Miller <steven.v.miller@gmail.com>
@@ -14,3 +14,6 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    knitr
+VignetteBuilder: knitr
