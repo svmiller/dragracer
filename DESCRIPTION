@@ -25,5 +25,6 @@ Suggests:
     knitr,
     tidyr,
     tibble,
-    dplyr
+    dplyr,
+    testthat
 VignetteBuilder: knitr
