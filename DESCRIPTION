@@ -12,7 +12,9 @@ Description: This is an R package for data sets pertaining to RuPaul's Drag Race
     episode-contestant-level data. This is a work in progress, and a love letter
     of a kind to RuPaul's Drag Race and the performers that have appeared on the show.
     This may not be the most productive use of my time, but I have tenure and what 
-    are you going to do about it?
+    are you going to do about it? I think there is at least some value in this package
+    if it allows the show's fandom to learn more about the R programming language 
+    around its contents.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
