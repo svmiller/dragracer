@@ -12,8 +12,7 @@ NULL
 #' \item{\code{contestant}}{a character vector for contestant's name, by season}
 #' \item{\code{age}}{a numeric vector for the respondent's purported age as of filming}
 #' \item{\code{dob}}{a date vector for the contestant's purported date of birth}
-#' \item{\code{hometown}}{a character vector for hometown, which is a work in progress.
-#' Sasha Velour ain't from New York. Girl is from Urbana, Illinois and should own it. I-L-L.}
+#' \item{\code{hometown}}{a character vector for hometown.}
 #' }
 #'
 #'@details Note: Cynthia Lee Fontaine, Shangela, Eureka O'Hara, and Vanessa Vanjie Mateo will appear in this data set twice.

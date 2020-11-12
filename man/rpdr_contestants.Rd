@@ -11,8 +11,7 @@ A data frame with 157 observations on the following 5 variables.
 \item{\code{contestant}}{a character vector for contestant's name, by season}
 \item{\code{age}}{a numeric vector for the respondent's purported age as of filming}
 \item{\code{dob}}{a date vector for the contestant's purported date of birth}
-\item{\code{hometown}}{a character vector for hometown, which is a work in progress.
-Sasha Velour ain't from New York. Girl is from Urbana, Illinois and should own it. I-L-L.}
+\item{\code{hometown}}{a character vector for hometown.}
 }
 }
 \usage{
