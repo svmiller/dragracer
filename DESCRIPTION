@@ -2,12 +2,12 @@ Package: dragracer
 Type: Package
 Title: Data Sets for RuPaul's Drag Race
 Version: 0.1.4
-Authors@R: person(given = "Steven", family = "Miller", middle = "V.",
+Authors@R: person("Steven", "Miller",
                   email = "steven.v.miller@gmail.com", 
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0003-4072-6263"))
 Maintainer: Steven V. Miller <steven.v.miller@gmail.com>
-Description: This is an R package for data sets pertaining to RuPaul's Drag Race. 
+Description: These are data sets for the hit TV show, RuPaul's Drag Race. 
     Data right now include episode-level data, contestant-level data, and 
     episode-contestant-level data. This is a work in progress, and a love letter
     of a kind to RuPaul's Drag Race and the performers that have appeared on the show.
