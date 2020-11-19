@@ -1,6 +1,11 @@
 
 # dragracer: Data Sets for RuPaul’s Drag Race
 
+[![](https://www.r-pkg.org/badges/version/dragracer?color=green)](https://cran.r-project.org/package=dragracer)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/dragracer?color=green)](https://cran.r-project.org/package=dragracer)
+[![](http://cranlogs.r-pkg.org/badges/last-month/dragracer?color=green)](https://cran.r-project.org/package=dragracer)
+[![](http://cranlogs.r-pkg.org/badges/last-week/dragracer?color=green)](https://cran.r-project.org/package=dragracer)
+
 <img src="man/figures/dragracer-sticker.png" alt="The dragracer hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
 `dragracer` is an R package of data sets for all available seasons of
@@ -14,7 +19,7 @@ fandom that is interested in the R programming language. I offer this
 package as a collection of accessible data with which they can
 experiment. I also offer this as a love letter of a kind to RuPaul’s
 Drag Race and all the contestants that have appeared on it. We have no
-choice but to stan, especially Jinkx Monsoon. Jinkx is the GOAT. The
+choice but to “stan”, especially Jinkx Monsoon. Jinkx is the GOAT. The
 conspicuously short Season 8 masks Bob’s relative dominance. Sasha
 Velour is Champaign-Urbana’s greatest export since REO Speedwagon.
 Kameron Michaels should’ve won Season 10.
