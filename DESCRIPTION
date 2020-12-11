@@ -18,8 +18,6 @@ Description: These are data sets for the hit TV show, RuPaul's Drag Race.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Imports:
-    emo
 Depends:
     R (>= 3.5.0)
 RoxygenNote: 7.1.1
