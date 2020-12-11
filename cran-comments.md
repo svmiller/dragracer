@@ -11,4 +11,4 @@ I will note that `devtools::spell_check()` suggested several spelling errors. Th
 
 ## Downstream dependencies
 
-This is a new package with no downstream dependencies to note.
+This is a simple update of a data package with no downstream dependencies to note.
