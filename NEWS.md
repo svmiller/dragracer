@@ -1,3 +1,9 @@
+dragracer 0.1.5
+---------------------------------------------------------------------
+
+- Add `.onAttach` greeting.
+- Fix columns where numeric vectors were stored as characters. This concerned the contestant-episode data.
+
 dragracer 0.1.4
 ---------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 Package: dragracer
 Type: Package
 Title: Data Sets for RuPaul's Drag Race
-Version: 0.1.4.0001
+Version: 0.1.5
 Authors@R: person("Steve", "Miller",
                   email = "steven.v.miller@gmail.com", 
                   role = c("aut", "cre"),
