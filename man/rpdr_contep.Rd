@@ -5,7 +5,7 @@
 \alias{rpdr_contep}
 \title{RuPaul's Drag Race Episode-Contestant Data}
 \format{
-A data frame with 1,888 observations on the following 11 variables.
+A data frame with the following 11 variables.
 \describe{
     \item{\code{season}}{a character vector for the season}
     \item{\code{rank}}{a numeric vector for the final rank of the contestant}
@@ -26,7 +26,7 @@ rpdr_contep
 }
 \description{
 These are episode-contestant-level data for RuPaul's Drag Race for all available seasons
- (currently through Season 12). For a given season, observations mostly decrease with
+ (currently through Season 14). For a given season, observations mostly decrease with
  each episode. Data include all sorts of information.
 }
 \keyword{datasets}

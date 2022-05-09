@@ -1,7 +1,7 @@
 Package: dragracer
 Type: Package
 Title: Data Sets for RuPaul's Drag Race
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: person("Steve", "Miller",
                   email = "steven.v.miller@gmail.com", 
                   role = c("aut", "cre"),
@@ -20,7 +20,7 @@ Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 3.5.0)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     knitr,
     tidyr,

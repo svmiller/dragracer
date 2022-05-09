@@ -5,7 +5,7 @@
 \alias{rpdr_contestants}
 \title{RuPaul's Drag Race Contestant Data}
 \format{
-A data frame with 157 observations on the following 5 variables.
+A data frame with the following 5 variables.
 \describe{
 \item{\code{season}}{a character vector for season}
 \item{\code{contestant}}{a character vector for contestant's name, by season}
@@ -19,7 +19,7 @@ rpdr_contestants
 }
 \description{
 These are contestant-level data for RuPaul's Drag Race for all available seasons
- (currently through Season 12). Data include all sorts of information.
+ (currently through Season 14). Data include all sorts of information.
 }
 \details{
 Note: Cynthia Lee Fontaine, Shangela, Eureka O'Hara, and Vanessa Vanjie Mateo will appear in this data set twice.

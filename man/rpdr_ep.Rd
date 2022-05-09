@@ -5,7 +5,7 @@
 \alias{rpdr_ep}
 \title{RuPaul's Drag Race Episode Data}
 \format{
-A data frame with 159 observations on the following 22 variables.
+A data frame with the following 22 variables.
 \describe{
     \item{\code{season}}{a character vector for season}
     \item{\code{episode}}{a numeric vector for the episode number}
@@ -18,13 +18,15 @@ A data frame with 159 observations on the following 22 variables.
     \item{\code{minic}}{a character vector describing the mini-challenge}
     \item{\code{minicw1}}{a character vector for a mini-challenge winner}
     \item{\code{minicw2}}{a character vector for a second mini-challenge winner, where applicable}
-    \item{\code{minicw3}}{a character vector for a second mini-challenge winner, where applicable}
+    \item{\code{minicw3}}{a character vector for a third mini-challenge winner, where applicable}
+    \item{\code{minicw4}}{a character vector for a fourth mini-challenge winner, where applicable}
     \item{\code{bottom1}}{a character vector for queen in the bottom 2 of that episode}
     \item{\code{bottom2}}{a character vector for queen in the bottom 2 of that episode}
     \item{\code{bottom3}}{a character vector for the third queen in the bottom of that episode. Thanks, Season 11.}
     \item{\code{bottom4}}{a character vector for the fourth queen in the bottom of that episode. Thanks, Season 11.}
     \item{\code{bottom5}}{a character vector for the fifth queen in the bottom of that episode. Thanks, Season 11.}
     \item{\code{bottom6}}{a character vector for the sixth queen in the bottom of that episode. Thanks, Season 11.}
+    \item{\code{bottom7}}{a character vector for the seventh queen in the bottom of that episode. Thanks, Season 14.}
     \item{\code{lipsyncartist}}{a character vector for the lip-sync artist}
     \item{\code{lipsyncsong}}{a character vector for the lip-sync artist's song}
     \item{\code{eliminated1}}{a character vector for the queen eliminated after the lip-sync}
@@ -36,6 +38,6 @@ rpdr_ep
 }
 \description{
 These are episode-level data for RuPaul's Drag Race for all available seasons
- (currently through Season 12). Data include all sorts of information.
+ (currently through Season 14). Data include all sorts of information.
 }
 \keyword{datasets}
