@@ -5,7 +5,8 @@
     #paste("She done already done had herses", emo::ji("partying")),
     paste("She done already done had herses"),
     # paste("The library is now open", emo::ji("book")))
-    paste("The library is now open"))
+    paste("The library is now open"),
+    paste("If you can't love these data\nhow in the hell are you gonna love yourself?\nCan I get an amen?"))
   greeting <- sample(ru_quotes, 1)
   packageStartupMessage(greeting)
 }
