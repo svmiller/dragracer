@@ -19,7 +19,8 @@
 *.bib.bak
 
 # ignore my old files and other irrelevant directories
-data-raw
+#data-raw
+dross
 .Rproj.user
 inst/doc
 CRAN-RELEASE
