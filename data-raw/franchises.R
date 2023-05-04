@@ -7,15 +7,10 @@ ISO_3166_1 %>% as_tibble() %>%
 # ^ nothing starts with X, so we'll reserve XS for All-Stars and other
 # non-country specific weirdness
 
-ISO_3166_1 %>%
-  as_tibble() %>%
-  filter(Name == "Brazil")
-  filter(Alpha_2 %in% c())
-
 # I'm really tempted to assign New Zealand's ISO code to this because the filming
-# is seemingly entirely in Auckland, despite what seems to be an immediate viewer
-# base that seems to be primarily Australian. However, there's no ISO2c that is
-# "DU", so I'll roll with that for legibility. American All-Stars will get "XS".
+# is seemingly entirely in Auckland, despite an immediate viewer base that seems
+# to be primarily Australian. However, there's no ISO2c that is "DU", so I'll
+# roll with that for legibility. American All-Stars will get "XS".
 tribble(~code, ~series,
         "DU", "RuPaul's Drag Race Down Under",
         "BE", "Drag Race Belgique",
