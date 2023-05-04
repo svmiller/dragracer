@@ -49,34 +49,5 @@ readxl::read_xlsx("data-raw/raw-contestants.xlsx") %>%
   select(season, contestant_id, contestant_name, real_name, dob,  city, subdivision, country) -> contestants
 
 
-
-contestants <- readxl::read_xlsx("data-raw/manual/raw-contestants.xlsx") %>%
-  select(-ethnic1, -ethnic2) %>%
-  mutate(dob = lubridate::as_date(dob)) %>%
-  mutate(contestant = ifelse(contestant == "A’Keria C. Davenport", "A'Keria C. Davenport", contestant),
-         contestant = ifelse(contestant == "Ra’Jah O’Hara", "Ra'Jah O'Hara", contestant)) %>%
-  mutate(contestant_id = trimws(str_to_lower(paste0(season, str_sub(contestant, 1, 4))))) %>%
-  mutate(contestant_id = case_when(
-    contestant_id == "s03shan" ~ "s02shan",
-    contestant_id == "s07mrs." ~ "s07mrs0",
-    contestant_id == "s10eure" ~ "s09eure",
-    contestant_id == "s10moné" ~ "s10mone",
-    contestant_id == "s11vane" ~ "s10vane",
-    contestant_id == "s11a'ke" ~ "s11aker",
-    contestant_id == "s11ra'j" ~ "s11raja",
-    contestant_id == "s13rosé" ~ "s13rose",
-    TRUE ~ contestant_id
-  )) %>%
-  mutate(contestant_id = ifelse(str_length(contestant_id) == 6, paste0(contestant_id,"0"), contestant_id)) %>%
-  separate(hometown, c("city", "subdivision", "country"), sep=", ") %>%
-  left_join(., iso31662 %>% select(code, name), by=c("subdivision"="name")) %>%
-  select(-subdivision) %>%
-  rename(subdivision = code) %>%
-  mutate(country = ifelse(is.na(country), "United States", country)) %>%
-  mutate(country = countrycode::countrycode(country, "country.name", "iso3c")) %>%
-  mutate(season = str_to_lower(season)) %>%
-  rename(contestant_name = contestant) %>%
-  select(season, contestant_id, contestant_name, real_name, rank, dob, age, city, subdivision, country) -> contestants
-
 write_csv(contestants, "data-raw/contestants.csv", na='')
 
